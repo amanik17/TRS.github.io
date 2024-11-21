@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRS Agrochemicals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #007b33;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #007b33;
+        }
+        section {
+            padding: 20px;
+            margin: 10px;
+            background: white;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #007b33;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .search-bar {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+        .search-bar input {
+            padding: 10px;
+            width: 50%;
+            max-width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .contact-form button {
+            background: #007b33;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .contact-form button:hover {
+            background: #005f26;
+        }
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .product-item {
+            margin: 10px;
+            text-align: center;
+            width: calc(33% - 20px); /* Adjust width for 3 items per row */
+            max-width: 150px; /* Set a maximum width for images */
+            cursor: pointer;
+        }
+        .product-image {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .hidden {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .product-item {
+                width: calc(50% - 20px); /* 2 items per row on smaller screens */
+            }
+        }
+        @media (max-width: 480px) {
+            .product-item {
+                width: 100%; /* 1 item per row on very small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>TRS Agrochemicals</h1>
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>TRS Agrochemicals is a leading provider of innovative agricultural solutions. Our mission is to enhance crop productivity while ensuring environmental sustainability. With years of experience in the industry, we are committed to delivering high-quality products that meet the needs of farmers worldwide.</p>
+</section>
+
+<section id="products">
+    <h2>Our Products</h2>
+    
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for products..." onkeyup="searchProducts()">
+    </div>
+
+    <div class="product-grid" id="productGrid">
+        <div class="product-item" data-category="herbicides" onclick="toggleProducts('herbicides')">
+            <h3>Herbicides</h3>
+            <img src="C:\Users\aman's\OneDrive\Desktop\weby\herbiside\Chemical Fertilizers Create A Dead Zone.jpeg" alt="Herbicides" class="product-image">
+        </div>
+        <div class="product-item" data-category="pesticides" onclick="toggleProducts('pesticides')">
+            <h3>Pesticides</h3>
+            <img src="C:\Users\aman's\OneDrive\Desktop\weby\pestiside\Feeding Seedlings_ Should I Fertilize Seedlings.jpeg" alt="Pesticides" class="product-image">
+        </div>
+        <div class="product-item" data-category="fertilizers" onclick="toggleProducts('fertilizers')">
+            <h3>Fertilizers</h3>
+            <img src="C:\Users\aman's\OneDrive\Desktop\weby\fertilazer\Cedar Grove.jpeg" alt="Fertilizers" class="product-image">
+        </div>
+        <div class="product-item" data-category="Chemical Sprayer" onclick="toggleProducts('Chemical Sprayer')">
+            <h3>Chemical Sprayer</h3>
+            <img src="C:\Users\aman's\OneDrive\Desktop\weby\speryer\Mr_ Sprayer Full Function Atomizer and Pump Sprayer.jpeg" alt="Chemical Sprayer" class="product-image">
+        </div>
+    </div>
+
+    <div id="herbicides" class="hidden">
+        <h4>Herbicide Products</h4>
+        <img src="C:\Users\aman's\OneDrive\Desktop\weby\herbiside\10-10-10 Fertilizer_ What It Is, and the Right and Wrong Way to Use It.jpeg" alt="Herbicide Product 1" class="product-image">
+        <img src="C:\Users\aman's\OneDrive\Desktop\weby\herbiside\Botano Health, Bio-Pesticide Fungicide Spray for Plants Indoor or Outdoor Gardening - Organic Pesticides for Vegetable Garden - Houseplant Insecticide for Indoor Plants (33_8oz).jpeg" alt="Herbicide Product 2" class="product-image">
+        <img src="C:\Users\aman's\OneDrive\Desktop\weby\herbiside\Supremo 41% Kuning _ Lalang _ Rumput _ Gardening _ monsanto _ plantation.jpeg" alt="Herbicide Product 3" class="product-image">
+    </div>
+    <div id="pesticides" class="hidden">
+        <h4>Pesticide Products</h4>
+        <img src="C:\Users\aman's\OneDrive\Desktop\weby\pestiside\Beware Of Urea In Your Skin Products.jpeg" alt="Pesticide Product 1" class="product-image">
+        <img src="C:\Users\aman's\OneDrive\Desktop\weby\pestiside\biopesticides market.jpeg" alt="Pesticide Product 2" class="product-image">
+        <img src="C:\Users\aman's\OneDrive\Desktop\weby\pestiside\How much does your fertilizer really cost_.jpeg" alt="Pesticide Product 3" class="product-image">
+    </div>
+    <div id="fertilizers" class="hidden">
+        <h4>Fertilizer Products</h4>
+        <img src="C:\Users\aman's\OneDrive\Desktop\weby\fertilazer\All South Brand All-Purpose Lawn Fertilizer For All Grasses 5000 sq ft.jpeg" alt="Fertilizer Product 1" class="product-image">
+        <img src="C:\Users\aman's\OneDrive\Desktop\weby\fertilazer\Potassium Fertilizer for Plants, Boosts Growth, Budding and Flowering, Liquid Plant Food 8 oz (250mL).jpeg" alt="Fertilizer Product 2" class="product-image">
+        <img src="C:\Users\aman's\OneDrive\Desktop\weby\pestiside\Yes, You Really Do Need to Fertilize Your Plants—Here's How (1).jpeg" alt="Fertilizer Product 3" class="product-image">
+    </div>
+    <div id="Chemical Sprayer" class="hidden">
+        <h4>Plant Growth Regulator Products</h4>
+        <img src="C:\Users\aman's\OneDrive\Desktop\weby\speryer\2L Garden Plant Watering Spray Car Wash Spray Bottle Foam Wash Sprayer Hand Pump Foam Sprayer Car.jpeg" alt="Growth Regulator Product 1" class="product-image">
+        <img src="C:\Users\aman's\OneDrive\Desktop\weby\speryer\Les néonicotinoïdes _ pourquoi le miracle annoncé a-t-il tourné au cauchemar _.jpeg" alt="Growth Regulator Product 2" class="product-image">
+        <img src="C:\Users\aman's\OneDrive\Desktop\weby\speryer\Pesticides and suicide prevention – why research needs to be put into practice.jpeg" alt="Growth Regulator Product 3" class="product-image">
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Phone: <strong>(123) 456-7890</strong></p>
+    <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2024 TRS Agrochemicals</p>
+</footer>
+
+<script>
+    function toggleProducts(category) {
+        // Hide all products
+        const allProducts = document.querySelectorAll('.hidden');
+        allProducts.forEach(product => product.classList.add('hidden'));
+
+        // Show selected category products
+        const selectedProducts = document.getElementById(category);
+        selectedProducts.classList.toggle('hidden');
+    }
+
+    function searchProducts() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const productItems = document.querySelectorAll('.product-item');
+
+        productItems.forEach(item => {
+            const category = item.getAttribute('data-category');
+            if (category.toLowerCase().includes(input)) {
+                item.style.display = ''; // Show item
+            } else {
+                item.style.display = 'none'; // Hide item
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
